@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { TournamentBundle, TournamentSummary } from '../shared/types';
+import { executeLocalApi, LOCAL_SYNC_CHANNEL_NAME } from './localBackend';
 
 export interface OfflineScoreAction {
   id: string;
@@ -13,6 +14,22 @@ export interface OfflineScoreAction {
 }
 
 const OFFLINE_QUEUE_KEY = 'smashpoint_offline_score_queue';
+const API_BASE_URL =
+  (import.meta.env.VITE_API_BASE_URL as string | undefined)?.trim().replace(/\/+$/, '') || '';
+
+let localBackendMode = false;
+const localModeListeners = new Set<(active: boolean) => void>();
+
+function activateLocalBackendMode(): void {
+  if (!localBackendMode) {
+    localBackendMode = true;
+    localModeListeners.forEach((cb) => cb(true));
+  }
+}
+
+export function isLocalBackendMode(): boolean {
+  return localBackendMode;
+}
 
 export function getOfflineQueue(): OfflineScoreAction[] {
   try {
@@ -37,6 +54,10 @@ export async function apiRequest<T>(
   url: string,
   options: RequestInit & { pin?: string; role?: 'organizer' | 'referee' } = {}
 ): Promise<T> {
+  if (localBackendMode) {
+    return executeLocalApi<T>(url, options);
+  }
+
   const headers: Record<string, string> = {
     'Content-Type': 'application/json',
     ...((options.headers as Record<string, string>) || {}),
@@ -44,21 +65,43 @@ export async function apiRequest<T>(
   if (options.pin) headers['x-referee-pin'] = options.pin;
   if (options.role) headers['x-smashpoint-role'] = options.role;
 
-  const res = await fetch(url, {
+  const targetUrl =
+    API_BASE_URL && url.startsWith('/') ? `${API_BASE_URL}${url}` : url;
+
+  const res = await fetch(targetUrl, {
     ...options,
     headers,
   });
 
+  const contentType = (res.headers.get('content-type') || '').toLowerCase();
+  const isJsonContentType = contentType.includes('application/json');
+  const hasApiHeader = res.headers.get('x-smashpoint-api') === '1';
+
   const text = await res.text();
   let data: Record<string, unknown> = {};
+  let parsedJson = false;
   if (text) {
     try {
       data = JSON.parse(text) as Record<string, unknown>;
+      parsedJson = true;
     } catch {
-      if (res.ok) {
-        throw new Error('Respons server tidak valid (bukan JSON).');
-      }
+      parsedJson = false;
     }
+  }
+
+  const isStaticMissingBackend =
+    !hasApiHeader &&
+    (((res.status === 404 || res.status === 405) &&
+      !(isJsonContentType && typeof data.error === 'string')) ||
+      (res.ok && !isJsonContentType && !parsedJson));
+
+  if (isStaticMissingBackend) {
+    activateLocalBackendMode();
+    return executeLocalApi<T>(url, options);
+  }
+
+  if (res.ok && !parsedJson && text) {
+    throw new Error('Respons server tidak valid (bukan JSON).');
   }
 
   if (!res.ok) {
@@ -110,12 +153,24 @@ export function useTournamentLiveSync(
   tournamentId: string | undefined,
   onUpdate: () => void
 ): { wsConnected: boolean; isOnline: boolean } {
-  const [wsConnected, setWsConnected] = useState(false);
+  const [wsConnected, setWsConnected] = useState(localBackendMode);
+  const [isLocal, setIsLocal] = useState(localBackendMode);
   const [isOnline, setIsOnline] = useState(
     typeof navigator !== 'undefined' ? navigator.onLine : true
   );
   const onUpdateRef = useRef(onUpdate);
   onUpdateRef.current = onUpdate;
+
+  useEffect(() => {
+    const listener = (active: boolean) => {
+      setIsLocal(active);
+      if (active) setWsConnected(true);
+    };
+    localModeListeners.add(listener);
+    return () => {
+      localModeListeners.delete(listener);
+    };
+  }, []);
 
   useEffect(() => {
     const handleOnline = () => {
@@ -131,19 +186,64 @@ export function useTournamentLiveSync(
     };
   }, []);
 
+  // Multi-tab BroadcastChannel + localStorage sync for static/offline fallback mode
   useEffect(() => {
     if (!tournamentId) return;
+    let channel: BroadcastChannel | null = null;
+
+    if (typeof BroadcastChannel !== 'undefined') {
+      channel = new BroadcastChannel(LOCAL_SYNC_CHANNEL_NAME);
+      channel.onmessage = (event) => {
+        const msg = event.data as { type?: string; tournamentId?: string } | undefined;
+        if (
+          msg?.type &&
+          (!msg.tournamentId || msg.tournamentId === tournamentId || tournamentId === 'all')
+        ) {
+          onUpdateRef.current();
+        }
+      };
+    }
+
+    const handleStorage = (e: StorageEvent) => {
+      if (e.key === 'smashpoint_local_db_v1') {
+        onUpdateRef.current();
+      }
+    };
+    window.addEventListener('storage', handleStorage);
+
+    return () => {
+      channel?.close();
+      window.removeEventListener('storage', handleStorage);
+    };
+  }, [tournamentId]);
+
+  useEffect(() => {
+    if (!tournamentId || isLocal || localBackendMode) {
+      if (isLocal || localBackendMode) setWsConnected(true);
+      return;
+    }
+
     let ws: WebSocket | null = null;
     let reconnectTimer: number | null = null;
     let closedByUser = false;
+    let failedAttempts = 0;
 
     const connect = () => {
-      if (closedByUser) return;
-      const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-      const wsUrl = `${protocol}//${window.location.host}/ws`;
+      if (closedByUser || localBackendMode) return;
+      let wsUrl: string;
+      if (API_BASE_URL) {
+        const parsed = new URL(API_BASE_URL);
+        const proto = parsed.protocol === 'https:' ? 'wss:' : 'ws:';
+        wsUrl = `${proto}//${parsed.host}/ws`;
+      } else {
+        const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+        wsUrl = `${protocol}//${window.location.host}/ws`;
+      }
+
       ws = new WebSocket(wsUrl);
 
       ws.onopen = () => {
+        failedAttempts = 0;
         setWsConnected(true);
         ws?.send(JSON.stringify({ type: 'subscribe', tournamentId }));
         onUpdateRef.current();
@@ -165,8 +265,13 @@ export function useTournamentLiveSync(
       };
 
       ws.onclose = () => {
+        if (localBackendMode) {
+          setWsConnected(true);
+          return;
+        }
         setWsConnected(false);
-        if (!closedByUser) {
+        failedAttempts += 1;
+        if (!closedByUser && failedAttempts <= 4) {
           reconnectTimer = window.setTimeout(connect, 2500);
         }
       };
@@ -183,7 +288,7 @@ export function useTournamentLiveSync(
       if (reconnectTimer) window.clearTimeout(reconnectTimer);
       ws?.close();
     };
-  }, [tournamentId]);
+  }, [tournamentId, isLocal]);
 
   return { wsConnected, isOnline };
 }
@@ -225,7 +330,6 @@ export function useOfflineScoreSync(
         setPendingCount(remaining.length);
       } catch (err) {
         const status = (err as { status?: number }).status;
-        // Drop invalid client errors (400/403/404), keep network errors
         if (status && status >= 400 && status < 500) {
           remaining = remaining.filter((q) => q.id !== item.id);
           saveOfflineQueue(remaining);
@@ -294,7 +398,6 @@ export function useOfflineScoreSync(
           setPendingCount(nextQueue.length);
           throw err;
         }
-        // Network disconnect -> keep in offline queue for later sync
         return null;
       }
     },
