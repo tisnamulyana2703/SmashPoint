@@ -1,0 +1,1373 @@
+{
+  "tournaments": [
+    {
+      "id": "trn_smashpoint2026",
+      "slug": "smashpoint-open-2026",
+      "name": "SmashPoint Open Championship 2026",
+      "location": "GOR Senayan Arena, Jakarta",
+      "startDate": "2026-11-13",
+      "endDate": "2026-11-15",
+      "status": "ongoing",
+      "courts": [
+        "Lapangan 1",
+        "Lapangan 2",
+        "Lapangan 3"
+      ],
+      "refereePin": "202611",
+      "defaultScoringRule": {
+        "preset": "standard",
+        "pointsPerGame": 21,
+        "maxPoints": 30,
+        "minimumLead": 2,
+        "bestOf": 3,
+        "intervalPoints": 11,
+        "changeEndsOnInterval": true
+      },
+      "createdAt": "2026-11-13T11:51:42.306Z",
+      "updatedAt": "2026-11-13T11:51:42.306Z"
+    }
+  ],
+  "categories": [
+    {
+      "id": "cat_ms_open",
+      "tournamentId": "trn_smashpoint2026",
+      "name": "Tunggal Putra (Open)",
+      "type": "mens_singles",
+      "format": "group_knockout",
+      "groupConfig": {
+        "groupCount": 2,
+        "advancePerGroup": 2,
+        "drawMode": "manual",
+        "tieBreakOrder": [
+          "wins",
+          "head_to_head",
+          "game_diff",
+          "point_diff",
+          "points_for"
+        ]
+      },
+      "knockoutConfig": {
+        "drawMode": "seeded",
+        "thirdPlaceMatch": true
+      },
+      "scoringRule": {
+        "preset": "standard",
+        "pointsPerGame": 21,
+        "maxPoints": 30,
+        "minimumLead": 2,
+        "bestOf": 3,
+        "intervalPoints": 11,
+        "changeEndsOnInterval": true
+      },
+      "createdAt": "2026-11-13T11:51:42.306Z"
+    },
+    {
+      "id": "cat_xd_open",
+      "tournamentId": "trn_smashpoint2026",
+      "name": "Ganda Campuran (Open)",
+      "type": "mixed_doubles",
+      "format": "knockout",
+      "groupConfig": {
+        "groupCount": 2,
+        "advancePerGroup": 2,
+        "drawMode": "random",
+        "tieBreakOrder": [
+          "wins",
+          "head_to_head",
+          "game_diff",
+          "point_diff",
+          "points_for"
+        ]
+      },
+      "knockoutConfig": {
+        "drawMode": "seeded",
+        "thirdPlaceMatch": true
+      },
+      "scoringRule": {
+        "preset": "standard",
+        "pointsPerGame": 21,
+        "maxPoints": 30,
+        "minimumLead": 2,
+        "bestOf": 3,
+        "intervalPoints": 11,
+        "changeEndsOnInterval": true
+      },
+      "createdAt": "2026-11-13T11:51:42.306Z"
+    }
+  ],
+  "participants": [
+    {
+      "id": "p_ms_1",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_ms_open",
+      "name": "Rizky Pratama",
+      "clubOrTeam": "PB Jaya Raya",
+      "seed": 1
+    },
+    {
+      "id": "p_ms_2",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_ms_open",
+      "name": "Bagas Wijaya",
+      "clubOrTeam": "PB Djarum",
+      "seed": 2
+    },
+    {
+      "id": "p_ms_3",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_ms_open",
+      "name": "Farhan Hidayat",
+      "clubOrTeam": "PB Exist",
+      "seed": 3
+    },
+    {
+      "id": "p_ms_4",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_ms_open",
+      "name": "Dimas Kusuma",
+      "clubOrTeam": "PB Tangkas",
+      "seed": 4
+    },
+    {
+      "id": "p_ms_5",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_ms_open",
+      "name": "Aditya Nugroho",
+      "clubOrTeam": "PB Mutiara"
+    },
+    {
+      "id": "p_ms_6",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_ms_open",
+      "name": "Kevin Gunawan",
+      "clubOrTeam": "PB Mansion"
+    },
+    {
+      "id": "p_ms_7",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_ms_open",
+      "name": "Ilham Ramadhan",
+      "clubOrTeam": "PB Victory"
+    },
+    {
+      "id": "p_ms_8",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_ms_open",
+      "name": "Taufik Santoso",
+      "clubOrTeam": "PB Candra Wijaya"
+    },
+    {
+      "id": "p_xd_1",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_xd_open",
+      "name": "Rendra / Nadia",
+      "clubOrTeam": "PB Jaya Raya",
+      "seed": 1
+    },
+    {
+      "id": "p_xd_2",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_xd_open",
+      "name": "Fajar / Sinta",
+      "clubOrTeam": "PB Djarum",
+      "seed": 2
+    },
+    {
+      "id": "p_xd_3",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_xd_open",
+      "name": "Alvin / Melati",
+      "clubOrTeam": "PB Exist",
+      "seed": 3
+    },
+    {
+      "id": "p_xd_4",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_xd_open",
+      "name": "Yoga / Putri",
+      "clubOrTeam": "PB Tangkas",
+      "seed": 4
+    },
+    {
+      "id": "p_xd_5",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_xd_open",
+      "name": "Hendra / Clara",
+      "clubOrTeam": "PB Mutiara"
+    },
+    {
+      "id": "p_xd_6",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_xd_open",
+      "name": "Bima / Ayu",
+      "clubOrTeam": "PB Victory"
+    },
+    {
+      "id": "p_xd_7",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_xd_open",
+      "name": "Galih / Dewi",
+      "clubOrTeam": "PB Mansion"
+    },
+    {
+      "id": "p_xd_8",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_xd_open",
+      "name": "Naufal / Tari",
+      "clubOrTeam": "PB Candra Wijaya"
+    }
+  ],
+  "groups": [
+    {
+      "id": "grp_vf9eh827z6",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_ms_open",
+      "name": "Grup A",
+      "participantIds": [
+        "p_ms_1",
+        "p_ms_3",
+        "p_ms_5",
+        "p_ms_7"
+      ],
+      "overrides": []
+    },
+    {
+      "id": "grp_ktgln627z6",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_ms_open",
+      "name": "Grup B",
+      "participantIds": [
+        "p_ms_2",
+        "p_ms_4",
+        "p_ms_6",
+        "p_ms_8"
+      ],
+      "overrides": []
+    }
+  ],
+  "matches": [
+    {
+      "id": "m_s7gp8h27z6",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_ms_open",
+      "stage": "group",
+      "groupId": "grp_vf9eh827z6",
+      "roundNumber": 1,
+      "roundLabel": "Grup A · Pekan 1",
+      "matchOrder": 1,
+      "court": "Lapangan 1",
+      "scheduledTime": "09:00",
+      "participantAId": "p_ms_1",
+      "participantBId": "p_ms_7",
+      "status": "completed",
+      "scoringRuleSnapshot": {
+        "preset": "standard",
+        "pointsPerGame": 21,
+        "maxPoints": 30,
+        "minimumLead": 2,
+        "bestOf": 3,
+        "intervalPoints": 11,
+        "changeEndsOnInterval": true
+      },
+      "games": [
+        {
+          "gameNumber": 1,
+          "scoreA": 21,
+          "scoreB": 14,
+          "winnerSide": "A"
+        },
+        {
+          "gameNumber": 2,
+          "scoreA": 21,
+          "scoreB": 16,
+          "winnerSide": "A"
+        }
+      ],
+      "currentGame": 2,
+      "servingSide": "A",
+      "endsSwapped": false,
+      "winnerId": "p_ms_1",
+      "notes": "",
+      "scoreEvents": [],
+      "updatedAt": "2026-11-13T11:51:42.306Z"
+    },
+    {
+      "id": "m_hjwywx27z6",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_ms_open",
+      "stage": "group",
+      "groupId": "grp_vf9eh827z6",
+      "roundNumber": 1,
+      "roundLabel": "Grup A · Pekan 1",
+      "matchOrder": 2,
+      "court": "Lapangan 2",
+      "scheduledTime": "09:00",
+      "participantAId": "p_ms_3",
+      "participantBId": "p_ms_5",
+      "status": "completed",
+      "scoringRuleSnapshot": {
+        "preset": "standard",
+        "pointsPerGame": 21,
+        "maxPoints": 30,
+        "minimumLead": 2,
+        "bestOf": 3,
+        "intervalPoints": 11,
+        "changeEndsOnInterval": true
+      },
+      "games": [
+        {
+          "gameNumber": 1,
+          "scoreA": 18,
+          "scoreB": 21,
+          "winnerSide": "B"
+        },
+        {
+          "gameNumber": 2,
+          "scoreA": 21,
+          "scoreB": 15,
+          "winnerSide": "A"
+        },
+        {
+          "gameNumber": 3,
+          "scoreA": 21,
+          "scoreB": 17,
+          "winnerSide": "A"
+        }
+      ],
+      "currentGame": 3,
+      "servingSide": "A",
+      "endsSwapped": false,
+      "winnerId": "p_ms_3",
+      "notes": "",
+      "scoreEvents": [],
+      "updatedAt": "2026-11-13T11:51:42.306Z"
+    },
+    {
+      "id": "m_aclvg627z6",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_ms_open",
+      "stage": "group",
+      "groupId": "grp_vf9eh827z6",
+      "roundNumber": 2,
+      "roundLabel": "Grup A · Pekan 2",
+      "matchOrder": 3,
+      "court": "Lapangan 3",
+      "scheduledTime": "09:35",
+      "participantAId": "p_ms_1",
+      "participantBId": "p_ms_5",
+      "status": "completed",
+      "scoringRuleSnapshot": {
+        "preset": "standard",
+        "pointsPerGame": 21,
+        "maxPoints": 30,
+        "minimumLead": 2,
+        "bestOf": 3,
+        "intervalPoints": 11,
+        "changeEndsOnInterval": true
+      },
+      "games": [
+        {
+          "gameNumber": 1,
+          "scoreA": 15,
+          "scoreB": 21,
+          "winnerSide": "B"
+        },
+        {
+          "gameNumber": 2,
+          "scoreA": 19,
+          "scoreB": 21,
+          "winnerSide": "B"
+        }
+      ],
+      "currentGame": 2,
+      "servingSide": "A",
+      "endsSwapped": false,
+      "winnerId": "p_ms_5",
+      "notes": "",
+      "scoreEvents": [],
+      "updatedAt": "2026-11-13T11:51:42.306Z"
+    },
+    {
+      "id": "m_vkb6jl27z6",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_ms_open",
+      "stage": "group",
+      "groupId": "grp_vf9eh827z6",
+      "roundNumber": 2,
+      "roundLabel": "Grup A · Pekan 2",
+      "matchOrder": 4,
+      "court": "Lapangan 1",
+      "scheduledTime": "09:35",
+      "participantAId": "p_ms_7",
+      "participantBId": "p_ms_3",
+      "status": "live",
+      "scoringRuleSnapshot": {
+        "preset": "standard",
+        "pointsPerGame": 21,
+        "maxPoints": 30,
+        "minimumLead": 2,
+        "bestOf": 3,
+        "intervalPoints": 11,
+        "changeEndsOnInterval": true
+      },
+      "games": [
+        {
+          "gameNumber": 1,
+          "scoreA": 21,
+          "scoreB": 17,
+          "winnerSide": "A"
+        },
+        {
+          "gameNumber": 2,
+          "scoreA": 18,
+          "scoreB": 16
+        }
+      ],
+      "currentGame": 2,
+      "servingSide": "A",
+      "endsSwapped": false,
+      "winnerId": null,
+      "notes": "",
+      "scoreEvents": [
+        {
+          "id": "evt_jspza827z8",
+          "matchId": "m_vkb6jl27z6",
+          "timestamp": "2026-11-13T11:51:42.306Z",
+          "actor": "referee",
+          "action": "point_a",
+          "gameNumber": 2,
+          "oldScoreA": 17,
+          "oldScoreB": 16,
+          "newScoreA": 18,
+          "newScoreB": 16
+        },
+        {
+          "id": "evt_1so2042cok",
+          "clientEventId": "test_evt_2",
+          "matchId": "m_vkb6jl27z6",
+          "timestamp": "2026-11-13T11:51:48.404Z",
+          "actor": "referee",
+          "action": "undo",
+          "gameNumber": 2,
+          "oldScoreA": 19,
+          "oldScoreB": 16,
+          "newScoreA": 18,
+          "newScoreB": 16,
+          "note": "Koreksi undo skor Game 2"
+        }
+      ],
+      "updatedAt": "2026-11-13T11:51:48.404Z",
+      "awaitingConfirmation": false,
+      "pendingWinnerId": null
+    },
+    {
+      "id": "m_e1ohxb27z6",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_ms_open",
+      "stage": "group",
+      "groupId": "grp_vf9eh827z6",
+      "roundNumber": 3,
+      "roundLabel": "Grup A · Pekan 3",
+      "matchOrder": 5,
+      "court": "Lapangan 3",
+      "scheduledTime": "10:10",
+      "participantAId": "p_ms_1",
+      "participantBId": "p_ms_3",
+      "status": "scheduled",
+      "scoringRuleSnapshot": {
+        "preset": "standard",
+        "pointsPerGame": 21,
+        "maxPoints": 30,
+        "minimumLead": 2,
+        "bestOf": 3,
+        "intervalPoints": 11,
+        "changeEndsOnInterval": true
+      },
+      "games": [
+        {
+          "gameNumber": 1,
+          "scoreA": 0,
+          "scoreB": 0
+        }
+      ],
+      "currentGame": 1,
+      "servingSide": "A",
+      "endsSwapped": false,
+      "winnerId": null,
+      "notes": "",
+      "scoreEvents": [],
+      "updatedAt": "2026-11-13T11:51:42.306Z"
+    },
+    {
+      "id": "m_79q4pj27z6",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_ms_open",
+      "stage": "group",
+      "groupId": "grp_vf9eh827z6",
+      "roundNumber": 3,
+      "roundLabel": "Grup A · Pekan 3",
+      "matchOrder": 6,
+      "court": "Lapangan 1",
+      "scheduledTime": "10:45",
+      "participantAId": "p_ms_5",
+      "participantBId": "p_ms_7",
+      "status": "live",
+      "scoringRuleSnapshot": {
+        "preset": "standard",
+        "pointsPerGame": 21,
+        "maxPoints": 30,
+        "minimumLead": 2,
+        "bestOf": 3,
+        "intervalPoints": 11,
+        "changeEndsOnInterval": true
+      },
+      "games": [
+        {
+          "gameNumber": 1,
+          "scoreA": 1,
+          "scoreB": 1
+        }
+      ],
+      "currentGame": 1,
+      "servingSide": "A",
+      "endsSwapped": false,
+      "winnerId": null,
+      "notes": "",
+      "scoreEvents": [
+        {
+          "id": "evt_s6pygkd6yy",
+          "clientEventId": "cevt_1794586331366_9z5mr",
+          "matchId": "m_79q4pj27z6",
+          "timestamp": "2026-11-13T16:12:10.762Z",
+          "actor": "admin",
+          "action": "point_b",
+          "gameNumber": 1,
+          "oldScoreA": 0,
+          "oldScoreB": 0,
+          "newScoreA": 0,
+          "newScoreB": 1
+        },
+        {
+          "id": "evt_b6n5bud92l",
+          "clientEventId": "cevt_1794586334128_0vysj",
+          "matchId": "m_79q4pj27z6",
+          "timestamp": "2026-11-13T16:12:13.485Z",
+          "actor": "admin",
+          "action": "toggle_serve",
+          "gameNumber": 1,
+          "oldScoreA": 0,
+          "oldScoreB": 1,
+          "newScoreA": 0,
+          "newScoreB": 1,
+          "note": "Pindah servis ke Tim A"
+        },
+        {
+          "id": "evt_u91f55d9u2",
+          "clientEventId": "cevt_1794586335113_3wfvw",
+          "matchId": "m_79q4pj27z6",
+          "timestamp": "2026-11-13T16:12:14.473Z",
+          "actor": "admin",
+          "action": "toggle_serve",
+          "gameNumber": 1,
+          "oldScoreA": 0,
+          "oldScoreB": 1,
+          "newScoreA": 0,
+          "newScoreB": 1,
+          "note": "Pindah servis ke Tim B"
+        },
+        {
+          "id": "evt_nim2rndb5w",
+          "clientEventId": "cevt_1794586336836_h79j8",
+          "matchId": "m_79q4pj27z6",
+          "timestamp": "2026-11-13T16:12:16.196Z",
+          "actor": "admin",
+          "action": "toggle_serve",
+          "gameNumber": 1,
+          "oldScoreA": 0,
+          "oldScoreB": 1,
+          "newScoreA": 0,
+          "newScoreB": 1,
+          "note": "Pindah servis ke Tim A"
+        },
+        {
+          "id": "evt_3u3aqidbqs",
+          "clientEventId": "cevt_1794586337588_f3bvy",
+          "matchId": "m_79q4pj27z6",
+          "timestamp": "2026-11-13T16:12:16.947Z",
+          "actor": "admin",
+          "action": "toggle_serve",
+          "gameNumber": 1,
+          "oldScoreA": 0,
+          "oldScoreB": 1,
+          "newScoreA": 0,
+          "newScoreB": 1,
+          "note": "Pindah servis ke Tim B"
+        },
+        {
+          "id": "evt_9lfliudchz",
+          "clientEventId": "cevt_1794586338569_04baq",
+          "matchId": "m_79q4pj27z6",
+          "timestamp": "2026-11-13T16:12:17.927Z",
+          "actor": "admin",
+          "action": "toggle_serve",
+          "gameNumber": 1,
+          "oldScoreA": 0,
+          "oldScoreB": 1,
+          "newScoreA": 0,
+          "newScoreB": 1,
+          "note": "Pindah servis ke Tim A"
+        },
+        {
+          "id": "evt_sh9ms2ddt7",
+          "clientEventId": "cevt_1794586340268_z35re",
+          "matchId": "m_79q4pj27z6",
+          "timestamp": "2026-11-13T16:12:19.627Z",
+          "actor": "admin",
+          "action": "toggle_serve",
+          "gameNumber": 1,
+          "oldScoreA": 0,
+          "oldScoreB": 1,
+          "newScoreA": 0,
+          "newScoreB": 1,
+          "note": "Pindah servis ke Tim B"
+        },
+        {
+          "id": "evt_zrj5wsdge3",
+          "clientEventId": "cevt_1794586343610_dn86s",
+          "matchId": "m_79q4pj27z6",
+          "timestamp": "2026-11-13T16:12:22.970Z",
+          "actor": "admin",
+          "action": "point_a",
+          "gameNumber": 1,
+          "oldScoreA": 0,
+          "oldScoreB": 1,
+          "newScoreA": 1,
+          "newScoreB": 1
+        }
+      ],
+      "updatedAt": "2026-11-13T16:12:22.970Z"
+    },
+    {
+      "id": "m_59jryl27z6",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_ms_open",
+      "stage": "group",
+      "groupId": "grp_ktgln627z6",
+      "roundNumber": 1,
+      "roundLabel": "Grup B · Pekan 1",
+      "matchOrder": 7,
+      "court": "Lapangan 3",
+      "scheduledTime": "09:00",
+      "participantAId": "p_ms_2",
+      "participantBId": "p_ms_8",
+      "status": "scheduled",
+      "scoringRuleSnapshot": {
+        "preset": "standard",
+        "pointsPerGame": 21,
+        "maxPoints": 30,
+        "minimumLead": 2,
+        "bestOf": 3,
+        "intervalPoints": 11,
+        "changeEndsOnInterval": true
+      },
+      "games": [
+        {
+          "gameNumber": 1,
+          "scoreA": 0,
+          "scoreB": 0
+        }
+      ],
+      "currentGame": 1,
+      "servingSide": "A",
+      "endsSwapped": false,
+      "winnerId": null,
+      "notes": "",
+      "scoreEvents": [],
+      "updatedAt": "2026-11-13T11:51:42.306Z"
+    },
+    {
+      "id": "m_nmfvg927z6",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_ms_open",
+      "stage": "group",
+      "groupId": "grp_ktgln627z6",
+      "roundNumber": 1,
+      "roundLabel": "Grup B · Pekan 1",
+      "matchOrder": 8,
+      "court": "Lapangan 1",
+      "scheduledTime": "09:35",
+      "participantAId": "p_ms_4",
+      "participantBId": "p_ms_6",
+      "status": "scheduled",
+      "scoringRuleSnapshot": {
+        "preset": "standard",
+        "pointsPerGame": 21,
+        "maxPoints": 30,
+        "minimumLead": 2,
+        "bestOf": 3,
+        "intervalPoints": 11,
+        "changeEndsOnInterval": true
+      },
+      "games": [
+        {
+          "gameNumber": 1,
+          "scoreA": 0,
+          "scoreB": 0
+        }
+      ],
+      "currentGame": 1,
+      "servingSide": "A",
+      "endsSwapped": false,
+      "winnerId": null,
+      "notes": "",
+      "scoreEvents": [],
+      "updatedAt": "2026-11-13T11:51:42.306Z"
+    },
+    {
+      "id": "m_wl0hi827z7",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_ms_open",
+      "stage": "group",
+      "groupId": "grp_ktgln627z6",
+      "roundNumber": 2,
+      "roundLabel": "Grup B · Pekan 2",
+      "matchOrder": 9,
+      "court": "Lapangan 1",
+      "scheduledTime": "10:10",
+      "participantAId": "p_ms_2",
+      "participantBId": "p_ms_6",
+      "status": "scheduled",
+      "scoringRuleSnapshot": {
+        "preset": "standard",
+        "pointsPerGame": 21,
+        "maxPoints": 30,
+        "minimumLead": 2,
+        "bestOf": 3,
+        "intervalPoints": 11,
+        "changeEndsOnInterval": true
+      },
+      "games": [
+        {
+          "gameNumber": 1,
+          "scoreA": 0,
+          "scoreB": 0
+        }
+      ],
+      "currentGame": 1,
+      "servingSide": "A",
+      "endsSwapped": false,
+      "winnerId": null,
+      "notes": "",
+      "scoreEvents": [],
+      "updatedAt": "2026-11-13T11:51:42.306Z"
+    },
+    {
+      "id": "m_mzvcwf27z7",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_ms_open",
+      "stage": "group",
+      "groupId": "grp_ktgln627z6",
+      "roundNumber": 2,
+      "roundLabel": "Grup B · Pekan 2",
+      "matchOrder": 10,
+      "court": "Lapangan 2",
+      "scheduledTime": "10:10",
+      "participantAId": "p_ms_8",
+      "participantBId": "p_ms_4",
+      "status": "scheduled",
+      "scoringRuleSnapshot": {
+        "preset": "standard",
+        "pointsPerGame": 21,
+        "maxPoints": 30,
+        "minimumLead": 2,
+        "bestOf": 3,
+        "intervalPoints": 11,
+        "changeEndsOnInterval": true
+      },
+      "games": [
+        {
+          "gameNumber": 1,
+          "scoreA": 0,
+          "scoreB": 0
+        }
+      ],
+      "currentGame": 1,
+      "servingSide": "A",
+      "endsSwapped": false,
+      "winnerId": null,
+      "notes": "",
+      "scoreEvents": [],
+      "updatedAt": "2026-11-13T11:51:42.306Z"
+    },
+    {
+      "id": "m_czaho727z7",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_ms_open",
+      "stage": "group",
+      "groupId": "grp_ktgln627z6",
+      "roundNumber": 3,
+      "roundLabel": "Grup B · Pekan 3",
+      "matchOrder": 11,
+      "court": "Lapangan 2",
+      "scheduledTime": "10:45",
+      "participantAId": "p_ms_2",
+      "participantBId": "p_ms_4",
+      "status": "scheduled",
+      "scoringRuleSnapshot": {
+        "preset": "standard",
+        "pointsPerGame": 21,
+        "maxPoints": 30,
+        "minimumLead": 2,
+        "bestOf": 3,
+        "intervalPoints": 11,
+        "changeEndsOnInterval": true
+      },
+      "games": [
+        {
+          "gameNumber": 1,
+          "scoreA": 0,
+          "scoreB": 0
+        }
+      ],
+      "currentGame": 1,
+      "servingSide": "A",
+      "endsSwapped": false,
+      "winnerId": null,
+      "notes": "",
+      "scoreEvents": [],
+      "updatedAt": "2026-11-13T11:51:42.306Z"
+    },
+    {
+      "id": "m_ss4irv27z7",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_ms_open",
+      "stage": "group",
+      "groupId": "grp_ktgln627z6",
+      "roundNumber": 3,
+      "roundLabel": "Grup B · Pekan 3",
+      "matchOrder": 12,
+      "court": "Lapangan 3",
+      "scheduledTime": "10:45",
+      "participantAId": "p_ms_6",
+      "participantBId": "p_ms_8",
+      "status": "scheduled",
+      "scoringRuleSnapshot": {
+        "preset": "standard",
+        "pointsPerGame": 21,
+        "maxPoints": 30,
+        "minimumLead": 2,
+        "bestOf": 3,
+        "intervalPoints": 11,
+        "changeEndsOnInterval": true
+      },
+      "games": [
+        {
+          "gameNumber": 1,
+          "scoreA": 0,
+          "scoreB": 0
+        }
+      ],
+      "currentGame": 1,
+      "servingSide": "A",
+      "endsSwapped": false,
+      "winnerId": null,
+      "notes": "",
+      "scoreEvents": [],
+      "updatedAt": "2026-11-13T11:51:42.306Z"
+    },
+    {
+      "id": "m_ufjy9c27z7",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_ms_open",
+      "stage": "knockout",
+      "roundNumber": 1,
+      "roundLabel": "Semifinal",
+      "matchOrder": 13,
+      "court": "Lapangan 2",
+      "scheduledTime": "11:55",
+      "participantAId": null,
+      "participantBId": null,
+      "status": "scheduled",
+      "scoringRuleSnapshot": {
+        "preset": "standard",
+        "pointsPerGame": 21,
+        "maxPoints": 30,
+        "minimumLead": 2,
+        "bestOf": 3,
+        "intervalPoints": 11,
+        "changeEndsOnInterval": true
+      },
+      "games": [
+        {
+          "gameNumber": 1,
+          "scoreA": 0,
+          "scoreB": 0
+        }
+      ],
+      "currentGame": 1,
+      "servingSide": "A",
+      "endsSwapped": false,
+      "winnerId": null,
+      "notes": "",
+      "scoreEvents": [],
+      "updatedAt": "2026-11-13T11:51:42.307Z",
+      "placeholderA": "Juara Grup A",
+      "placeholderB": "Runner-up Grup A",
+      "nextMatchId": "m_gc20vl27z7",
+      "nextSlot": "A",
+      "thirdPlaceMatchId": "m_hlw4jt27z7"
+    },
+    {
+      "id": "m_tnbpw727z7",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_ms_open",
+      "stage": "knockout",
+      "roundNumber": 1,
+      "roundLabel": "Semifinal",
+      "matchOrder": 14,
+      "court": "Lapangan 3",
+      "scheduledTime": "11:55",
+      "participantAId": null,
+      "participantBId": null,
+      "status": "scheduled",
+      "scoringRuleSnapshot": {
+        "preset": "standard",
+        "pointsPerGame": 21,
+        "maxPoints": 30,
+        "minimumLead": 2,
+        "bestOf": 3,
+        "intervalPoints": 11,
+        "changeEndsOnInterval": true
+      },
+      "games": [
+        {
+          "gameNumber": 1,
+          "scoreA": 0,
+          "scoreB": 0
+        }
+      ],
+      "currentGame": 1,
+      "servingSide": "A",
+      "endsSwapped": false,
+      "winnerId": null,
+      "notes": "",
+      "scoreEvents": [],
+      "updatedAt": "2026-11-13T11:51:42.307Z",
+      "placeholderA": "Runner-up Grup B",
+      "placeholderB": "Juara Grup B",
+      "nextMatchId": "m_gc20vl27z7",
+      "nextSlot": "B",
+      "thirdPlaceMatchId": "m_hlw4jt27z7"
+    },
+    {
+      "id": "m_gc20vl27z7",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_ms_open",
+      "stage": "knockout",
+      "roundNumber": 2,
+      "roundLabel": "Final",
+      "matchOrder": 15,
+      "court": "Lapangan 3",
+      "scheduledTime": "12:30",
+      "participantAId": null,
+      "participantBId": null,
+      "status": "scheduled",
+      "scoringRuleSnapshot": {
+        "preset": "standard",
+        "pointsPerGame": 21,
+        "maxPoints": 30,
+        "minimumLead": 2,
+        "bestOf": 3,
+        "intervalPoints": 11,
+        "changeEndsOnInterval": true
+      },
+      "games": [
+        {
+          "gameNumber": 1,
+          "scoreA": 0,
+          "scoreB": 0
+        }
+      ],
+      "currentGame": 1,
+      "servingSide": "A",
+      "endsSwapped": false,
+      "winnerId": null,
+      "notes": "",
+      "scoreEvents": [],
+      "updatedAt": "2026-11-13T11:51:42.307Z"
+    },
+    {
+      "id": "m_hlw4jt27z7",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_ms_open",
+      "stage": "knockout",
+      "roundNumber": 2,
+      "roundLabel": "Perebutan Juara 3",
+      "matchOrder": 16,
+      "court": "Lapangan 1",
+      "scheduledTime": "13:05",
+      "participantAId": null,
+      "participantBId": null,
+      "placeholderA": "Kalah Semifinal 1",
+      "placeholderB": "Kalah Semifinal 2",
+      "isThirdPlace": true,
+      "status": "scheduled",
+      "scoringRuleSnapshot": {
+        "preset": "standard",
+        "pointsPerGame": 21,
+        "maxPoints": 30,
+        "minimumLead": 2,
+        "bestOf": 3,
+        "intervalPoints": 11,
+        "changeEndsOnInterval": true
+      },
+      "games": [
+        {
+          "gameNumber": 1,
+          "scoreA": 0,
+          "scoreB": 0
+        }
+      ],
+      "currentGame": 1,
+      "servingSide": "A",
+      "endsSwapped": false,
+      "winnerId": null,
+      "notes": "",
+      "scoreEvents": [],
+      "updatedAt": "2026-11-13T11:51:42.307Z"
+    },
+    {
+      "id": "m_kogewu27z7",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_xd_open",
+      "stage": "knockout",
+      "roundNumber": 1,
+      "roundLabel": "Perempat Final",
+      "matchOrder": 1,
+      "court": "Lapangan 1",
+      "scheduledTime": "11:20",
+      "participantAId": "p_xd_1",
+      "participantBId": "p_xd_8",
+      "status": "completed",
+      "scoringRuleSnapshot": {
+        "preset": "standard",
+        "pointsPerGame": 21,
+        "maxPoints": 30,
+        "minimumLead": 2,
+        "bestOf": 3,
+        "intervalPoints": 11,
+        "changeEndsOnInterval": true
+      },
+      "games": [
+        {
+          "gameNumber": 1,
+          "scoreA": 21,
+          "scoreB": 12,
+          "winnerSide": "A"
+        },
+        {
+          "gameNumber": 2,
+          "scoreA": 21,
+          "scoreB": 15,
+          "winnerSide": "A"
+        }
+      ],
+      "currentGame": 2,
+      "servingSide": "A",
+      "endsSwapped": false,
+      "winnerId": "p_xd_1",
+      "notes": "",
+      "scoreEvents": [],
+      "updatedAt": "2026-11-13T11:51:42.307Z",
+      "nextMatchId": "m_w6lq2w27z7",
+      "nextSlot": "A"
+    },
+    {
+      "id": "m_zhpc9q27z7",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_xd_open",
+      "stage": "knockout",
+      "roundNumber": 1,
+      "roundLabel": "Perempat Final",
+      "matchOrder": 2,
+      "court": "Lapangan 2",
+      "scheduledTime": "11:20",
+      "participantAId": "p_xd_4",
+      "participantBId": "p_xd_5",
+      "status": "live",
+      "scoringRuleSnapshot": {
+        "preset": "standard",
+        "pointsPerGame": 21,
+        "maxPoints": 30,
+        "minimumLead": 2,
+        "bestOf": 3,
+        "intervalPoints": 11,
+        "changeEndsOnInterval": true
+      },
+      "games": [
+        {
+          "gameNumber": 1,
+          "scoreA": 20,
+          "scoreB": 20
+        }
+      ],
+      "currentGame": 1,
+      "servingSide": "B",
+      "endsSwapped": false,
+      "winnerId": null,
+      "notes": "",
+      "scoreEvents": [
+        {
+          "id": "evt_dqueg827z9",
+          "matchId": "m_zhpc9q27z7",
+          "timestamp": "2026-11-13T11:51:42.306Z",
+          "actor": "referee",
+          "action": "point_b",
+          "gameNumber": 1,
+          "oldScoreA": 20,
+          "oldScoreB": 19,
+          "newScoreA": 20,
+          "newScoreB": 20
+        }
+      ],
+      "updatedAt": "2026-11-13T11:51:42.307Z",
+      "nextMatchId": "m_w6lq2w27z7",
+      "nextSlot": "B"
+    },
+    {
+      "id": "m_hrko3h27z7",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_xd_open",
+      "stage": "knockout",
+      "roundNumber": 1,
+      "roundLabel": "Perempat Final",
+      "matchOrder": 3,
+      "court": "Lapangan 3",
+      "scheduledTime": "11:20",
+      "participantAId": "p_xd_2",
+      "participantBId": "p_xd_7",
+      "status": "ready",
+      "scoringRuleSnapshot": {
+        "preset": "standard",
+        "pointsPerGame": 21,
+        "maxPoints": 30,
+        "minimumLead": 2,
+        "bestOf": 3,
+        "intervalPoints": 11,
+        "changeEndsOnInterval": true
+      },
+      "games": [
+        {
+          "gameNumber": 1,
+          "scoreA": 0,
+          "scoreB": 0
+        }
+      ],
+      "currentGame": 1,
+      "servingSide": "A",
+      "endsSwapped": false,
+      "winnerId": null,
+      "notes": "",
+      "scoreEvents": [],
+      "updatedAt": "2026-11-13T11:51:42.307Z",
+      "nextMatchId": "m_ffymki27z7",
+      "nextSlot": "A"
+    },
+    {
+      "id": "m_24stz027z7",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_xd_open",
+      "stage": "knockout",
+      "roundNumber": 1,
+      "roundLabel": "Perempat Final",
+      "matchOrder": 4,
+      "court": "Lapangan 1",
+      "scheduledTime": "11:55",
+      "participantAId": "p_xd_3",
+      "participantBId": "p_xd_6",
+      "status": "ready",
+      "scoringRuleSnapshot": {
+        "preset": "standard",
+        "pointsPerGame": 21,
+        "maxPoints": 30,
+        "minimumLead": 2,
+        "bestOf": 3,
+        "intervalPoints": 11,
+        "changeEndsOnInterval": true
+      },
+      "games": [
+        {
+          "gameNumber": 1,
+          "scoreA": 0,
+          "scoreB": 0
+        }
+      ],
+      "currentGame": 1,
+      "servingSide": "A",
+      "endsSwapped": false,
+      "winnerId": null,
+      "notes": "",
+      "scoreEvents": [],
+      "updatedAt": "2026-11-13T11:51:42.307Z",
+      "nextMatchId": "m_ffymki27z7",
+      "nextSlot": "B"
+    },
+    {
+      "id": "m_w6lq2w27z7",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_xd_open",
+      "stage": "knockout",
+      "roundNumber": 2,
+      "roundLabel": "Semifinal",
+      "matchOrder": 5,
+      "court": "Lapangan 1",
+      "scheduledTime": "12:30",
+      "participantAId": "p_xd_1",
+      "participantBId": null,
+      "status": "scheduled",
+      "scoringRuleSnapshot": {
+        "preset": "standard",
+        "pointsPerGame": 21,
+        "maxPoints": 30,
+        "minimumLead": 2,
+        "bestOf": 3,
+        "intervalPoints": 11,
+        "changeEndsOnInterval": true
+      },
+      "games": [
+        {
+          "gameNumber": 1,
+          "scoreA": 0,
+          "scoreB": 0
+        }
+      ],
+      "currentGame": 1,
+      "servingSide": "A",
+      "endsSwapped": false,
+      "winnerId": null,
+      "notes": "",
+      "scoreEvents": [],
+      "updatedAt": "2026-11-13T11:51:42.309Z",
+      "nextMatchId": "m_le5q6d27z7",
+      "nextSlot": "A",
+      "thirdPlaceMatchId": "m_fr0tjd27z8"
+    },
+    {
+      "id": "m_ffymki27z7",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_xd_open",
+      "stage": "knockout",
+      "roundNumber": 2,
+      "roundLabel": "Semifinal",
+      "matchOrder": 6,
+      "court": "Lapangan 2",
+      "scheduledTime": "12:30",
+      "participantAId": null,
+      "participantBId": null,
+      "status": "scheduled",
+      "scoringRuleSnapshot": {
+        "preset": "standard",
+        "pointsPerGame": 21,
+        "maxPoints": 30,
+        "minimumLead": 2,
+        "bestOf": 3,
+        "intervalPoints": 11,
+        "changeEndsOnInterval": true
+      },
+      "games": [
+        {
+          "gameNumber": 1,
+          "scoreA": 0,
+          "scoreB": 0
+        }
+      ],
+      "currentGame": 1,
+      "servingSide": "A",
+      "endsSwapped": false,
+      "winnerId": null,
+      "notes": "",
+      "scoreEvents": [],
+      "updatedAt": "2026-11-13T11:51:42.307Z",
+      "nextMatchId": "m_le5q6d27z7",
+      "nextSlot": "B",
+      "thirdPlaceMatchId": "m_fr0tjd27z8"
+    },
+    {
+      "id": "m_le5q6d27z7",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_xd_open",
+      "stage": "knockout",
+      "roundNumber": 3,
+      "roundLabel": "Final",
+      "matchOrder": 7,
+      "court": "Lapangan 2",
+      "scheduledTime": "13:05",
+      "participantAId": null,
+      "participantBId": null,
+      "status": "scheduled",
+      "scoringRuleSnapshot": {
+        "preset": "standard",
+        "pointsPerGame": 21,
+        "maxPoints": 30,
+        "minimumLead": 2,
+        "bestOf": 3,
+        "intervalPoints": 11,
+        "changeEndsOnInterval": true
+      },
+      "games": [
+        {
+          "gameNumber": 1,
+          "scoreA": 0,
+          "scoreB": 0
+        }
+      ],
+      "currentGame": 1,
+      "servingSide": "A",
+      "endsSwapped": false,
+      "winnerId": null,
+      "notes": "",
+      "scoreEvents": [],
+      "updatedAt": "2026-11-13T11:51:42.307Z"
+    },
+    {
+      "id": "m_fr0tjd27z8",
+      "tournamentId": "trn_smashpoint2026",
+      "categoryId": "cat_xd_open",
+      "stage": "knockout",
+      "roundNumber": 3,
+      "roundLabel": "Perebutan Juara 3",
+      "matchOrder": 8,
+      "court": "Lapangan 3",
+      "scheduledTime": "13:05",
+      "participantAId": null,
+      "participantBId": null,
+      "placeholderA": "Kalah Semifinal 1",
+      "placeholderB": "Kalah Semifinal 2",
+      "isThirdPlace": true,
+      "status": "scheduled",
+      "scoringRuleSnapshot": {
+        "preset": "standard",
+        "pointsPerGame": 21,
+        "maxPoints": 30,
+        "minimumLead": 2,
+        "bestOf": 3,
+        "intervalPoints": 11,
+        "changeEndsOnInterval": true
+      },
+      "games": [
+        {
+          "gameNumber": 1,
+          "scoreA": 0,
+          "scoreB": 0
+        }
+      ],
+      "currentGame": 1,
+      "servingSide": "A",
+      "endsSwapped": false,
+      "winnerId": null,
+      "notes": "",
+      "scoreEvents": [],
+      "updatedAt": "2026-11-13T11:51:42.307Z"
+    }
+  ]
+}

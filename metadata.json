@@ -1,0 +1,6 @@
+{
+  "name": "SmashPoint",
+  "description": "Platform manajemen turnamen badminton real-time untuk membuat kompetisi, mengatur grup dan bracket, live scoring wasit, halaman publik QR Code, dan Big Screen TV.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
